@@ -38,24 +38,26 @@ int _print_string(va_list ap)
 */
 int _print_int(va_list ap)
 {
-	
-	int d = va_arg(ap, int);
+    int d = va_arg(ap, int);
+    int count = 0;
 
     if (d < 0) 
     {
-		_write_char('-');
+        _write_char('-');
         d = -d; 
+        count++;
     }
 
     if (d == 0) 
     {
         _write_char('0');
+        count++;
     }
     else
     {
         int num_digits = 0;
         int i, temp = d;
-		char digits[10];   
+        char digits[10];   
         while (temp != 0)
         {
             temp /= 10;
@@ -71,8 +73,9 @@ int _print_int(va_list ap)
         for (i = 0; i < num_digits; i++)
         {     
             _write_char(digits[i]);
+            count++;
         }
     }
-    return (0);
+    return count;
 }
 
