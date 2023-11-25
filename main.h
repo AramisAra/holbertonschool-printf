@@ -26,6 +26,7 @@ int _print_percent(va_list ap);
 int _print_int(va_list ap);
 int _print_reverse(va_list ap);
 int _print_rot13(va_list ap);
+int print_number_base(va_list ap, int base, int uppercase);
 int _print_unsigned(va_list ap);
 int _print_octal(va_list ap);
 int _print_binary(va_list ap);
