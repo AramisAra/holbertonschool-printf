@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 	print_type argument[] = {
 		{"c", _print_char},
 		{"s", _print_string},
+		{"%", _print_percent},
 		{"d", _print_int},
 		{"i", _print_int},
 		{NULL, NULL}
@@ -48,6 +49,7 @@ int _printf(const char *format, ...)
 		if (!argument[j].parameter)
 		{
 			char_count += _write_char(format[i]);
+			_write_char('%');
 		}
 	}
 

@@ -31,6 +31,17 @@ int _print_string(va_list ap)
 }
 
 /**
+ * _print_percent - prints a percent symbol to stdout
+ * @ap: the argument pointer
+ * Return: the number of characters printed
+ */
+int _print_percent(va_list ap)
+{
+    (void)ap;
+    return (_write_char('%'));
+}
+
+/**
 * print_int - prints a integer to stdout
 * @ap: the argument pointer
 *
