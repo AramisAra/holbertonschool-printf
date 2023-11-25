@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
 * print_char - prints a character to stdout
 * @ap: the arguments pointer
@@ -20,14 +21,13 @@ int _print_char(va_list ap)
 */
 int _print_string(va_list ap)
 {
-	char c;
-	c = (char)va_arg(ap, int);
-    while (c != '\0')
-    {
-	    _write_char(c);
-        c++;
-    }
-    return (1);
+	char *str;
+
+	str = va_arg(ap, char *);
+
+	if (str == NULL)
+		str = "(null)";
+	return (write(1, str, strlen(str)));
 }
 
 /**
