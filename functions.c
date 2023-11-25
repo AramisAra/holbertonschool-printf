@@ -12,8 +12,8 @@ int write_char(char c)
 }
 
 /**
-* print_char - prints a character to stdout
-* @ap: the arguments pointer
+* print_char - writes a character to stdout
+* @ap: the character to print
 *
 * Return: the number of characters printed (always 1).
 */
@@ -27,7 +27,7 @@ int print_char(va_list ap)
 * print_string - prints a string to stdout
 * @ap: the argument pointer
 *
-* Return: the number of characters printed
+* Return: the number of characters printed (always 1)
 */
 int print_string(va_list ap)
 {
