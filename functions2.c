@@ -6,7 +6,7 @@
 * @base: the base to convert to
 *
 * Return: the converted number as a string
-*/
+
 char * convert(unsigned int num, int base)
 {
 	const char Representation[] = "0123456789ABCDEF";
@@ -30,7 +30,7 @@ char * convert(unsigned int num, int base)
 * @ap: action pointer
 *
 * Return: Number of characters printed
-*/
+
 int _print_reverse(va_list ap)
 {
 	int len = 0;
@@ -53,7 +53,7 @@ int _print_reverse(va_list ap)
 * @ap: action pointer
 *
 * Return: length of the string
-*/
+
 int _ptrint_rot13(va_list ap)
 {
 	int i, j;
@@ -85,7 +85,7 @@ int _ptrint_rot13(va_list ap)
 * @ap: action pointer
 *
 * Return: number of digits printed
-*/
+
 int _print_unsigned(va_list ap)
 {
 	unsigned int n = va_arg(ap, unsigned int);
@@ -99,7 +99,7 @@ int _print_unsigned(va_list ap)
 * ap: action pointers
 *
 *Returns: number of digits printed
-*/
+
 int _print_octal(va_list ap)
 {
 	unsigned int n = va_arg(ap, unsigned int);
@@ -107,3 +107,4 @@ int _print_octal(va_list ap)
 
 	return _print_string(s);
 }
+*/
