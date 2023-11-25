@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* write_char - writes the character c to stdout
+* _write_char - writes the character c to stdout
 * @c: the character to print
 *
 * Return: the number of characters printed (always 1).
@@ -12,7 +12,7 @@ int write_char(char c)
 }
 
 /**
-* print_char - writes a character to stdout
+* _print_char - writes a character to stdout
 * @ap: the character to print
 *
 * Return: the number of characters printed (always 1).
@@ -24,12 +24,12 @@ int print_char(va_list ap)
 }
 
 /**
-* print_string - prints a string to stdout
+* _print_string - prints a string to
 * @ap: the argument pointer
 *
 * Return: the number of characters printed (always 1)
 */
-int print_string(va_list ap)
+int _print_string(va_list ap)
 {
 	int count = 0;
 	char *s = va_arg(ap, char *);
