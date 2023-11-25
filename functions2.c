@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
-* convert - converts an unsigned integer to a string in the given base
+* convert - function that converts our int to hex, octal or binary
 * @num: the number to be converted
 * @base: the base to convert to
 *
 * Return: the converted number as a string
 */
-char * convert(unsigned int num, int base)
+
+char *convert(unsigned int num, int base)
 {
 	const char Representation[] = "0123456789ABCDEF";
 	static char buffer[50];
@@ -39,7 +40,7 @@ int _print_reverse(va_list ap)
 
 	s = va_arg(ap, char *);
 	if (!s)
-		s = "(null)"
+		s = "(null)";
 	while (s[len])
 		++len;
 	i = len - 1;
@@ -58,13 +59,13 @@ int _ptrint_rot13(va_list ap)
 {
 	int i, j;
 	char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char rAlphabet[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"
+	char rAlphabet[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	char *s;
 
-	s = va_arg(ap, char *)
+	s = va_arg(ap, char *);
 	if (!s)
-		s = "(null)";
-	for ( i = 0; s[i]; ++i);
+ 		s = "(null)";
+	for ( i = 0; s[i]; ++i)
 	{
 		for (j = 0; alphabet[j]; ++j)
 		{
@@ -75,7 +76,7 @@ int _ptrint_rot13(va_list ap)
 			}
 		}
 		if (!alphabet[j])
-			-putchar(s[i]);
+			_putchar(s[i]);
 	}
 	return (i);
 }
@@ -84,26 +85,51 @@ int _ptrint_rot13(va_list ap)
 * _print_unsigned - prints an unsigned integer
 * @ap: action pointer
 *
-* Return: number of digits printed
+* Return: number of digits
 */
+
 int _print_unsigned(va_list ap)
 {
-	unsigned int n = va_arg(ap, unsigned int);
-	char *s = convert(n, 10);
+	int i;
+	int count = 0;
+	int mint = va_arg(ap, int);
+	unsigned int n;
 
-	return _print_string(s);
+	n = mint;
+	for (i = 1000000000; i > 0; i /= 10)
+	{
+		if (n / i)
+		{
+			if (( n / i) % 10 != 0)
+				count += _putchar((n / i % 10) + '0');
+		}
+		else if (n / i == 0 && i == 1)
+		{
+			count += _putchar(n / i % 10 + '0');
+		}
+	}
+	return (count);
 }
 
 /**
 * _print_octal - prints an octal number
-* ap: action pointers
+* @ap: action pointers
 *
-*Returns: number of digits printed
+*Return: number of digits
 */
 int _print_octal(va_list ap)
 {
-	unsigned int n = va_arg(ap, unsigned int);
-	char *s = convert(n, 8);
+	int i;
+	unsigned int n;
+	char *s;
+	int count = 0;
 
-	return _print_string(s);
+	n = va_arg(ap, unsigned int);
+	s = convert(n, 8);
+
+	for (i = 0; s[i]; i++)
+	{
+		count += _putchar(s[i]);
+	}
+	return (count);
 }

@@ -8,7 +8,7 @@
 *
 * Return: the number of character printed
 */
-int custom_printf(const char *format, print_type handlers[], va_list args)
+int custom_printf(const char *format, print_type handlers[], va_list ap)
 {
 	int i, j;
 	int char_count = 0;
@@ -27,7 +27,7 @@ int custom_printf(const char *format, print_type handlers[], va_list args)
 		{
 			if (*handlers[j].parameter == format[i +1])
 			{
-				char_count += handlers[j].f(args);
+				char_count += handlers[j].f(ap);
 				break;
 			}
 		}

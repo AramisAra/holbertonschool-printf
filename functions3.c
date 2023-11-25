@@ -13,14 +13,14 @@ int print_number_base(va_list ap, int base, int uppercase)
 	int i;
 	unsigned int n;
 	char *s;
-	int count = 0:
+	int count = 0;
 
 	n = va_arg(ap, unsigned int);
 	s = convert(n, base);
 
 	if (!n)
 		count += _putchar('0');
-	for (i + 0; s[i] && n; i++)
+	for (i = 0; s[i] && n; i++)
 	{
 		if (uppercase && s[i] >= 'a' && s[i] <= 'f')
 			count += _putchar(s[i] - 32); /* convert to uppercase*/
