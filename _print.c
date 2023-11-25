@@ -22,10 +22,9 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 
+	va_start(ap, format);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-
-	va_start(ap, format);
 
 	for (i = 0; format && format[i]; i++)
 	{
