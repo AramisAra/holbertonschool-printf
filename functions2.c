@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
-* convert - converts an unsigned integer to a string in the given base
-* @num: the number to be converted
-* @base: the base to convert to
-*
-* Return: the converted number as a string
-*/
+ * convert - converts an unsigned integer to a string in the given base
+ * @num: the number to be converted
+ * @base: the base to convert to
+ *
+ * Return: the converted number as a string
+ */
 char * convert(unsigned int num, int base)
 {
 	const char Representation[] = "0123456789ABCDEF";
@@ -26,11 +26,11 @@ char * convert(unsigned int num, int base)
 }
 
 /**
-* _print_reverse - prints a string in reverse
-* @ap: action pointer
-*
-* Return: Number of characters printed
-*/
+ * _print_reverse - prints a string in reverse
+ * @ap: action pointer
+ *
+ * Return: Number of characters printed
+ */
 int _print_reverse(va_list ap)
 {
 	int len = 0;
@@ -49,11 +49,11 @@ int _print_reverse(va_list ap)
 }
 
 /**
-* _print_rot13 - encodes a string using rot13
-* @ap: action pointer
-*
-* Return: length of the string
-*/
+ * _print_rot13 - encodes a string using rot13
+ * @ap: action pointer
+ *
+ * Return: length of the string
+ */
 int _ptrint_rot13(va_list ap)
 {
 	int i, j;
@@ -81,11 +81,11 @@ int _ptrint_rot13(va_list ap)
 }
 
 /**
-* _print_unsigned - prints an unsigned integer
-* @ap: action pointer
-*
-* Return: number of digits printed
-*/
+ * _print_unsigned - prints an unsigned integer
+ * @ap: action pointer
+ *
+ * Return: number of digits printed
+ */
 int _print_unsigned(va_list ap)
 {
 	unsigned int n = va_arg(ap, unsigned int);
@@ -95,11 +95,11 @@ int _print_unsigned(va_list ap)
 }
 
 /**
-* _print_octal - prints an octal number
-* ap: action pointers
-*
-*Returns: number of digits printed
-*/
+ * _print_octal - prints an octal number
+ * ap: action pointers
+ *
+ *Returns: number of digits printed
+ */
 int _print_octal(va_list ap)
 {
 	unsigned int n = va_arg(ap, unsigned int);
