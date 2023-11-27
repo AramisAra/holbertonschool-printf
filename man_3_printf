@@ -1,0 +1,65 @@
+PRINTF(3)                 Linux Programmer's Manual                PRINTF(3)
+
+NAME
+       _printf - formatted output conversion
+
+SYNOPSIS
+       #include <stdio.h>
+
+       int _printf(const char *format, ...);
+
+DESCRIPTION
+
+       The _printf() function writes output to the standard output (stdout)
+       according to the format specified by the format string. It is
+       equivalent to the printf() function provided by the standard C
+       library, with the underscore ('_') prefix.
+
+       The format string is composed of zero or more directives, which are
+       either ordinary characters or specifications starting with the percent 
+       character ('%'). Each conversion specification defines how a single 
+       argument should be formatted and inserted into the output string.
+
+RETURN VALUE
+       Upon successful completion, the _printf() function returns the number
+       of characters printed (excluding the null byte used to end the
+       output). If an output error occurs, a negative value is returned.
+       Refer to the printf(3) manual page for more details.
+
+EXAMPLES
+       The following example demonstrates the usage of _printf():
+
+           #include <stdio.h>
+
+           int main() {
+               _printf("Hello, %s!\n", "world");
+               return 0;
+           }
+
+           // Output:
+           // Hello, world!
+
+SEE ALSO
+       printf(3), sprintf(3), fprintf(3), snprintf(3)
+
+NOTES
+       The _printf() function behaves similarly to printf(), supporting
+       various format specifiers for different types of arguments such as
+       integers, characters, strings, and more.
+
+       Users should be cautious of potential format string vulnerabilities
+       when using _printf() and ensure that the format string is properly
+       constructed to avoid security risks such as format string attacks.
+
+       The printf(3) manual page provides additional details on the format
+       specifiers supported by _printf().
+
+AUTHOR
+       This man page was written by Aramis Martinez.
+
+AVAILABILITY
+       The _printf() function is available in systems that support the C
+       standard library.
+
+COPYRIGHT
+       This man page is provided "as is" without any warranties.
