@@ -39,7 +39,7 @@ int print_number_base(va_list ap, int base, int uppercase)
  */
 int _print_binary(va_list ap)
 {
-	return print_number_base(ap, 2, 0);
+	return (print_number_base(ap, 2, 0));
 }
 /**
  * print_hex_u - function that prints a hex number from int (uppercase)
@@ -49,7 +49,7 @@ int _print_binary(va_list ap)
  */
 int _print_hex_u(va_list ap)
 {
-	return print_number_base(ap, 16, 1);
+	return (print_number_base(ap, 16, 1));
 }
 
 /**
@@ -60,7 +60,7 @@ int _print_hex_u(va_list ap)
  */
 int _print_hex_l(va_list ap)
 {
-	return print_number_base(ap, 16, 0);
+	return (print_number_base(ap, 16, 0));
 }
 
 

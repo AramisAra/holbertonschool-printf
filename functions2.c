@@ -7,7 +7,7 @@
  *
  * Return: the converted number as a string
  */
-char * convert(unsigned int num, int base)
+char *convert(unsigned int num, int base)
 {
 	const char Representation[] = "0123456789ABCDEF";
 	static char buffer[50];
@@ -64,7 +64,7 @@ int _ptrint_rot13(va_list ap)
 	s = va_arg(ap, char *);
 	if (!s)
 		s = "(null)";
-	for ( i = 0; s[i]; ++i)
+	for (i = 0; s[i]; ++i)
 	{
 		for (j = 0; alphabet[j]; ++j)
 		{
@@ -105,5 +105,5 @@ int _print_octal(va_list ap)
 	unsigned int n = va_arg(ap, unsigned int);
 	char *s = convert(n, 8);
 
-	return write(1, s, 1);
+	return (write(1, s, 1));
 }
