@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 		if (!argument[j].parameter)
 		{
 			char_count += _write_char('%');
-			char_count += write(1, format, -1);
+			char_count += _write_char(format[i]);
 		}
 	}
 
