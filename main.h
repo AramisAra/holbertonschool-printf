@@ -24,6 +24,7 @@ int _print_char(va_list ap);
 int _print_string(va_list ap);
 int _print_percent(va_list ap);
 int _print_int(va_list ap);
+int _print_nint(va_list ap);
 int _print_reverse(va_list ap);
 int _print_rot13(va_list ap);
 int print_number_base(va_list ap, int base, int uppercase);
