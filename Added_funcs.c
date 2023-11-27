@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* write_char - writes the character c to stdout
+* _write_char - writes the character c to stdout
 * @c: the character to print
 *
 * Return: the number of characters printed (always 1).

@@ -1,7 +1,7 @@
 #include "main.h"
 #include <string.h>
 /**
- * print_char - prints a character to stdout
+ * _print_char - prints a character to stdout
  * @ap: the arguments pointer
  *
  * Return: the number of characters printed (always 1).
@@ -15,7 +15,7 @@ int _print_char(va_list ap)
 }
 
 /**
- * print_string - prints a string to stdout
+ * _print_string - prints a string to stdout
  * @ap: the argument pointer
  *
  * Return: the number of characters printed
@@ -43,7 +43,7 @@ int _print_percent(va_list ap)
 }
 
 /**
- * print_i - Prints an integer.
+ * _print_i - Prints an integer.
  * @i: The integer to print.
  *
  * Return: Chars and digits printed in to stdout.
@@ -87,7 +87,7 @@ int _print_int(va_list ap)
 }
 
 /**
- * print_d - Prints the integer of a decimal.
+ * _print_d - Prints the integer of a decimal.
  * @d: Decimal to print.
  *
  * Return: Chars and digits printed in to the stdout.
