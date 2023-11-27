@@ -1,65 +1,38 @@
-PRINTF(3)                 Linux Programmer's Manual                PRINTF(3)
+.\" Man page for _printf"
+.\" 11-27-2023"
+.SH NAME
 
-NAME
-       _printf - formatted output conversion
+_printf - Format and print data
 
-SYNOPSIS
-       #include <stdio.h>
+.SH SYNOPSIS
 
-       int _printf(const char *format, ...);
+#include <stdio.h>
 
-DESCRIPTION
+int _printf(const char *format, ...);
 
-       The _printf() function writes output to the standard output (stdout)
-       according to the format specified by the format string. It is
-       equivalent to the printf() function provided by the standard C
-       library, with the underscore ('_') prefix.
+.SH DESCRIPTION
 
-       The format string is composed of zero or more directives, which are
-       either ordinary characters or specifications starting with the percent 
-       character ('%'). Each conversion specification defines how a single 
-       argument should be formatted and inserted into the output string.
+The '_printf' function formats and prints data to the standard output according to the format specifier.
 
-RETURN VALUE
-       Upon successful completion, the _printf() function returns the number
-       of characters printed (excluding the null byte used to end the
-       output). If an output error occurs, a negative value is returned.
-       Refer to the printf(3) manual page for more details.
+.SH CONVERSION SPECIFIERS
 
-EXAMPLES
-       The following example demonstrates the usage of _printf():
+The conversion specifiers and their meanings are:
 
-           #include <stdio.h>
+%i or %d:
+The 'int' argument is converted to signed decimal notation.
 
-           int main() {
-               _printf("Hello, %s!\n", "world");
-               return 0;
-           }
+%c:
+The 'int' argument is converted to an 'unsigned char', and the resulting character is written.
 
-           // Output:
-           // Hello, world!
+%s:
+Characters from the array are written up to but not including a terminating null byte '\0'.
 
-SEE ALSO
-       printf(3), sprintf(3), fprintf(3), snprintf(3)
+.SH EXAMPLES
 
-NOTES
-       The _printf() function behaves similarly to printf(), supporting
-       various format specifiers for different types of arguments such as
-       integers, characters, strings, and more.
+_printf("character: %c\n", 'H');
+_printf("string: %s\n", "Hello");
+_printf("percent: %%\n");
+_printf("integer: %i\n", 123);
+_printf("integer: %d\n", 123);
 
-       Users should be cautious of potential format string vulnerabilities
-       when using _printf() and ensure that the format string is properly
-       constructed to avoid security risks such as format string attacks.
-
-       The printf(3) manual page provides additional details on the format
-       specifiers supported by _printf().
-
-AUTHOR
-       This man page was written by Aramis Martinez.
-
-AVAILABILITY
-       The _printf() function is available in systems that support the C
-       standard library.
-
-COPYRIGHT
-       This man page is provided "as is" without any warranties.
+.SH RETURN VALUE
