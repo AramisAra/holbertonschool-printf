@@ -43,7 +43,7 @@ int _print_percent(va_list ap)
 }
 
 /**
- * _print_i - Prints an integer.
+ * _print_int - Prints an integer.
  * @ap: The integer to print.
  *
  * Return: Chars and digits printed in to stdout.
@@ -87,7 +87,7 @@ int _print_int(va_list ap)
 }
 
 /**
- * _print_d - Prints the integer of a decimal.
+ * _print_nint - Prints the integer of a decimal.
  * @ap: Decimal to print.
  *
  * Return: Chars and digits printed in to the stdout.
