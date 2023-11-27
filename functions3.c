@@ -20,7 +20,12 @@ int print_number_base(va_list ap, int base, int uppercase)
 
 	if (!n)
 		count += _putchar('0');
+<<<<<<< HEAD
 	for (i = 0; s[i] && n; i++)
+=======
+	
+	for (i = 0; s[i]; i++)
+>>>>>>> main
 	{
 		if (uppercase && s[i] >= 'a' && s[i] <= 'f')
 			count += _putchar(s[i] - 32); /* convert to uppercase*/

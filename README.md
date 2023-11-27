@@ -1,7 +1,7 @@
 #C - Printf
 ## Description
 Task: Create a simple exact replica of the printf() function found in the C programming language.
-Using Variadic functions, structs, and multiple (name the helper functions) the program we created will be able to display the same results when used by the actual printf() function. What we want to accomplish with our projectis to show an alternative method of creating your own printf() functions in the C programming language. If the function printf() is succesfully compiled and executed, it should return the count of characters printed, excluding the null byte used to terminate strings. In case of failure, the function is designed to return -1 as an error indicator. Additionally, if the string argument is NULL, the function returns the string "(null)". IF the format specifier is unknow (not recognized by the code), the output will display the format specifier itself as a string.
+Using Variadic functions, structs, and multiple (functions) the program we created will be able to display the same results when used by the actual printf() function. What we want to accomplish with our projectis to show an alternative method of creating your own printf() functions in the C programming language. If the function printf() is succesfully compiled and executed, it should return the count of characters printed, excluding the null byte used to terminate strings. In case of failure, the function is designed to return -1 as an error indicator. Additionally, if the string argument is NULL, the function returns the string "(null)". IF the format specifier is unknow (not recognized by the code), the output will display the format specifier itself as a string.
 Although the current implementation of the code can handle all format specifiers, only fie have been utulized so far due to the simplicity of the code. There are plans to update the printf repository in the future to include support for more format specifiers.
 
 ###  Prototype
@@ -11,13 +11,13 @@ Although the current implementation of the code can handle all format specifiers
 
 ### File Usage
 	File name | Description
-	--- | ---
-	[_printf.c](github/aramis/printf/master/_printf.c | the main _printf.c file is used to handle the array containing all the format specifiers used. Ass well as where the function starts to execute.
-i	[_get_print.c](github.....)
-
-
-
-
+	
+	[main.h] (https://github.com/AramisAra/holbertonschool-printf/blob/main/main.h) | This header file contains all our prototypes used as well as containing our struct and the standard libraries used.
+	[Added_funcs.c] (https://github.com/AramisAra/holbertonschool-printf/blob/main/Added_funcs.c) | A filr contaning functions we add to help the writing of out code.
+	[_printf.c](github/aramis/printf/master/_printf.c) | the main _printf.c file is used to handle the array containing all the format specifiers used. Ass well as where the function starts to execute. It also contains the main body of our code. Uses loops and if statements in order to execute the functions connected to the format specifiers.
+	[functions.c] (https://github.com/AramisAra/holbertonschool-printf/blob/main/functions.c) | We placed here all our functions used within our code. Holberton school limit of 5 helper functions per file.
+	[functions2.c] (https://github.com/AramisAra/holbertonschool-printf/blob/main/functions2.c) | A file containing the functions for our converter, reverse, and Rot13.
+	[functions3.c] (https://github.com/AramisAra/holbertonschool-printf/blob/main/functions3.c) | Another file containing functions to handle the hexidecimals and binary specifiers.
 
 # Format specifiers
 	The _printf program will replicate the effects of the listed % format specifiers as when used with printf().
@@ -26,11 +26,20 @@ i	[_get_print.c](github.....)
 	--- | --- | ---
 
 	'_print_char' | Prints a single character | '%c'
-	'_print_string' | Prints a string | etc
-
+	'_print_string' | Prints a string | %s
+	'_print_percent | Prints a % | %%
+	'_print_int | Prints a integer in base 10 | %d & %i
+	'_print_reverse | Prints string in reverse | r
+	'_print_hex_u | Prints the upper case hexidecimal number | X
+	'_prints_hex_l | Prints the lower case hexidecimal number | x
+	'_prints_octal | Prints and octal number | o
+	'_prints_unsigned | Prints an unsigned integer | u
+	'_print_binary | Prints the binary form of the integer | b
+	'_print_rot13 | Converts the string into Rot13 | R
 
 ### Compilation
-
+Our code can be compiled:
+$ gcc -Wall -Werror -Wextra -pedantic *.c
 
 ### Testing the program
 	The main.c File test
@@ -112,17 +121,11 @@ i	[_get_print.c](github.....)
 	Unknown:[%r]
 	Unknown:[%r]
 	alex@ubuntu:~/c/printf$
-	
-	Bugs:
 
-
-
-
-
-
-	About:
+### 	About:
 
 	Authors:
+
 	Sean Cardona
 	Aramis Martinez
 

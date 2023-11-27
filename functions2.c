@@ -64,7 +64,11 @@ int _ptrint_rot13(va_list ap)
 
 	s = va_arg(ap, char *);
 	if (!s)
+<<<<<<< HEAD
  		s = "(null)";
+=======
+		s = "(null)";
+>>>>>>> main
 	for ( i = 0; s[i]; ++i)
 	{
 		for (j = 0; alphabet[j]; ++j)
@@ -95,6 +99,7 @@ int _print_unsigned(va_list ap)
 	int mint = va_arg(ap, int);
 	unsigned int n;
 
+<<<<<<< HEAD
 	n = mint;
 	for (i = 1000000000; i > 0; i /= 10)
 	{
@@ -109,6 +114,9 @@ int _print_unsigned(va_list ap)
 		}
 	}
 	return (count);
+=======
+	return (write(1, s, 1));
+>>>>>>> main
 }
 
 /**
@@ -127,9 +135,13 @@ int _print_octal(va_list ap)
 	n = va_arg(ap, unsigned int);
 	s = convert(n, 8);
 
+<<<<<<< HEAD
 	for (i = 0; s[i]; i++)
 	{
 		count += _putchar(s[i]);
 	}
 	return (count);
+=======
+	return write(1, s, 1);
+>>>>>>> main
 }

@@ -1,4 +1,5 @@
 #include "main.h"
+<<<<<<< HEAD
 
 /**
 * _write_char - writes the character c to stdout
@@ -11,16 +12,20 @@ int write_char(char c)
 	return (write(1, &c, 1));
 }
 
+=======
+#include <string.h>
+>>>>>>> main
 /**
 * _print_char - writes a character to stdout
 * @ap: the character to print
 *
 * Return: the number of characters printed (always 1).
 */
-int print_char(va_list ap)
+int _print_char(va_list ap)
 {
-	write_char(va_arg(ap, int));
-	return (1);
+    int buffer = va_arg(ap, int);
+    write(1, &buffer, 1);
+    return (1);
 }
 
 /**
@@ -31,28 +36,24 @@ int print_char(va_list ap)
 */
 int _print_string(va_list ap)
 {
-	int count = 0;
-	char *s = va_arg(ap, char *);
+	char *str;
 
-	if (!s)
-		s = "(null)";
+	str = va_arg(ap, char *);
 
-	for (; *s; s++)
-		count += write_char(*s);
-
-	return (count);
+	if (str == NULL)
+		str = "(null)";
+	return (write(1, str, strlen(str)));
 }
 
 /**
-* print_percent - prints a percent symbol to stdout
-* @ap: the arguments pointer (unused)
-*
-* Return: the number of characters printed (always 1).
-*/
-int print_percent(va_list ap __attribute__((unused)))
+ * _print_percent - prints a percent symbol to stdout
+ * @ap: the argument pointer
+ * Return: the number of characters printed
+ */
+int _print_percent(va_list ap)
 {
-	write_char('%');
-	return (1);
+    (void)ap;
+    return (_write_char('%'));
 }
 
 /**
@@ -61,39 +62,46 @@ int print_percent(va_list ap __attribute__((unused)))
 *
 * Return: the number of characters printed
 */
-int print_int(va_list ap)
+int _print_int(va_list ap)
 {
-	int count = 0;
-	int n = va_arg(ap, int);
+    int d = va_arg(ap, int);
+    int count = 0;
 
-	if (n < 0)
-		count += write_char('-');
+    if (d < 0) 
+    {
+        _write_char('-');
+        d = -d; 
+        count++;
+    }
 
-	return (count);
+    if (d == 0) 
+    {
+        _write_char('0');
+        count++;
+    }
+    else
+    {
+        int num_digits = 0;
+        int i, temp = d;
+        char digits[10];   
+        while (temp != 0)
+        {
+            temp /= 10;
+            num_digits++;
+        }
+
+        for (i = num_digits - 1; i >= 0; i--)
+        {
+            digits[i] = d % 10 + '0';
+            d /= 10;
+        }
+                
+        for (i = 0; i < num_digits; i++)
+        {     
+            _write_char(digits[i]);
+            count++;
+        }
+    }
+    return count;
 }
 
-/**
-* print_positive_int - helper function to print a positive integer
-* @n: the positive integer to print
-*
-* Return: the number of characters printed
-*/
-int print_positive_int(int n)
-{
-	int count = 0;
-	int i;
-	int digit;
-
-	if (n == 0)
-		count += write_char('0');
-
-	for (i = 1000000000; i > 0; i/= 10)
-	{
-		digit = (n / i) % 10;
-		if (digit < 0)
-			digit = -digit;
-		count += write_char(digit + '0');
-	}
-
-	return (count);
-}
