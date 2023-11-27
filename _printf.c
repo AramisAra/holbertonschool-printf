@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
-* _printf - matches specifier and returns count
-* @format: a character string
-* @...: variadic arguments
-*
-* Return: the number of characters printed
-*/
+ * _printf - matches specifier and returns count
+ * @format: a character string
+ * @...: variadic arguments
+ * Return: the number of characters printed
+ */
 int _printf(const char *format, ...)
 {
 	int i, j;
@@ -20,13 +19,9 @@ int _printf(const char *format, ...)
 		{"d", _print_nint},
 		{"i", _print_int},
 		{NULL, NULL}
-	};
-
-	va_start(ap, format);
-	
+	}; va_start(ap, format);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-
 	for (i = 0; format && format[i]; i++)
 	{
 		if (format[i] != '%')
@@ -34,7 +29,6 @@ int _printf(const char *format, ...)
 			char_count += _write_char(format[i]);
 			continue;
 		}
-
 		for (j = 0; argument[j].parameter; j++)
 		{
 			if (*argument[j].parameter == format[i + 1])
@@ -43,17 +37,13 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-
-		i++;
-
-		if (!argument[j].parameter)
-		{
-			char_count += _write_char('%');
-			char_count += _write_char(format[i]);
-		}
+		i++:
+			if (!argument[j].parameter)
+			{
+				char_count += _write_char('%');
+				char_count += _write_char(format[i]);
+			}
 	}
-
 	va_end(ap);
-
 	return (char_count);
 }
