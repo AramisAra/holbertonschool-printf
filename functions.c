@@ -9,7 +9,7 @@
 int _print_char(va_list ap)
 {
 	int buffer = va_arg(ap, int);
-    
+
 	write(1, &buffer, 1);
 	return (1);
 }
