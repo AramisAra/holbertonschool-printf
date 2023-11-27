@@ -19,7 +19,8 @@ int _printf(const char *format, ...)
 		{"d", _print_nint},
 		{"i", _print_int},
 		{NULL, NULL}
-	}; va_start(ap, format);
+	}; 
+	va_start(ap, format);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	for (i = 0; format && format[i]; i++)
