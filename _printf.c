@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-		i++:
+		i++;
 			if (!argument[j].parameter)
 			{
 				char_count += _write_char('%');
