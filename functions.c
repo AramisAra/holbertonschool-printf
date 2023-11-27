@@ -1,24 +1,24 @@
 #include "main.h"
 #include <string.h>
 /**
-* print_char - prints a character to stdout
-* @ap: the arguments pointer
-*
-* Return: the number of characters printed (always 1).
-*/
+ * print_char - prints a character to stdout
+ * @ap: the arguments pointer
+ *
+ * Return: the number of characters printed (always 1).
+ */
 int _print_char(va_list ap)
 {
-    int buffer = va_arg(ap, int);
-    write(1, &buffer, 1);
-    return (1);
+	int buffer = va_arg(ap, int);
+	write(1, &buffer, 1);
+	return (1);
 }
 
 /**
-* print_string - prints a string to stdout
-* @ap: the argument pointer
-*
-* Return: the number of characters printed
-*/
+ * print_string - prints a string to stdout
+ * @ap: the argument pointer
+ *
+ * Return: the number of characters printed
+ */
 int _print_string(va_list ap)
 {
 	char *str;
@@ -37,8 +37,8 @@ int _print_string(va_list ap)
  */
 int _print_percent(va_list ap)
 {
-    (void)ap;
-    return (_write_char('%'));
+	(void)ap;
+	return (_write_char('%'));
 }
 
 /**
